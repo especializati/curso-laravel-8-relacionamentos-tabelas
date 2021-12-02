@@ -6,9 +6,18 @@ use App\Models\{
     Image,
     Permission,
     User,
-    Preference
+    Preference,
+    Tag
 };
 use Illuminate\Support\Facades\Route;
+Route::get('/many-to-many-polymorphic', function () {
+    // $course = Course::first();
+    // $course->tags()->attach(2);
+    // dd($course->tags);
+
+    $tag = Tag::where('name', 'tag3')->first();
+    dd($tag->users);
+});
 
 Route::get('/one-to-many-polymorphic', function () {
     //$course = Course::first();
